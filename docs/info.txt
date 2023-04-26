@@ -1,0 +1,5 @@
+migrate create -ext sql -dir db/migration -seq init_schema
+
+migrate -path db/migration -database="postgresql://root:postgres@localhost:5433/simple_bank?sslmode=disable" -verbose up
+
+sqlc init
